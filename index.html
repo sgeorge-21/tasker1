@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASKER - Connect with Skilled Professionals | Service Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">TASKER</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn-nav btn-login" onclick="handleLogin()">Login</button>
+                <button class="btn-nav btn-signup" onclick="handleSignup()">Sign Up</button>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Find Skilled Professionals for Any Job</h1>
+            <p>Connect with trusted experts. Get work done fast. It's that simple.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary-lg" onclick="handlePostService()">Post a Service Request</button>
+                <button class="btn-secondary-lg" onclick="handleSignup()">Become a Professional</button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>5,000+</h3>
+                    <p>Active Professionals</p>
+                </div>
+                <div class="stat">
+                    <h3>20+</h3>
+                    <p>Service Categories</p>
+                </div>
+                <div class="stat">
+                    <h3>10,000+</h3>
+                    <p>Jobs Completed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Services Section -->
+        <section class="services-section" id="services">
+            <h2 class="section-title">Popular Services on TASKER</h2>
+            <p class="section-subtitle">Browse from 20+ categories of skilled professionals</p>
+            
+            <div class="services-grid">
+                <div class="service-card" onclick="handleServiceClick('Carpentry')">
+                    <div class="service-icon">🔨</div>
+                    <h3>Carpentry</h3>
+                </div>
+                <div class="service-card" onclick="handleServiceClick('Plumbing')">
+                    <div class="service-icon">🔧</div>
+                    <h3>Plumbing</h3>
+                </div>
+                <div class="service-card" onclick="handleServiceClick('Lawn Care')">
+                    <div class="service-icon">🧹</div>
+                    <h3>Lawn Care</h3>
+                </div>
+                <div class="service-card" onclick="handleServiceClick('Babysitting')">
+                    <div class="service-icon">🧸</div>
+                    <h3>Babysitting</h3>
+                </div>
+                <div class="service-card" onclick="handleServiceClick('Cooking')">
+                    <div class="service-icon">👨‍🍳</div>
+                    <h3>Cooking</h3>
+                </div>
+                <div class="service-card" onclick="handleServiceClick('Cleaning')">
+                    <div class="service-icon">🧼</div>
+                    <h3>Cleaning</h3>
+                </div>
+                <div class="service-card" onclick="handleServiceClick('Laundry')">
+                    <div class="service-icon">👕</div>
+                    <h3>Laundry</h3>
+                </div>
+                <div class="service-card" onclick="handleServiceClick('Electrical')">
+                    <div class="service-icon">⚡</div>
+                    <h3>Electrical</h3>
+                </div>
+            </div>
+            
+            <div class="cta-link">
+                <a href="#" onclick="handleBrowseAllServices(); return false;">View All 20+ Services →</a>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works" id="how-it-works">
+            <h2 class="section-title">How TASKER Works</h2>
+            
+            <div class="how-it-works-container">
+                <div class="how-it-works-half">
+                    <h3>For Service Seekers</h3>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h4>Post Your Task</h4>
+                            <p>Describe what you need done. Be as specific as possible about your requirements and timeline.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h4>Review Offers</h4>
+                            <p>Receive proposals from qualified professionals. Compare their experience, ratings, and pricing.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h4>Hire & Communicate</h4>
+                            <p>Select your preferred professional and discuss project details through our secure messaging.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <h4>Pay & Review</h4>
+                            <p>Release payment upon completion and leave a review for the professional.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="how-it-works-half">
+                    <h3>For Service Providers</h3>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h4>Create Your Profile</h4>
+                            <p>Set up your professional profile with your skills, experience, and portfolio.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h4>Browse Tasks</h4>
+                            <p>View available job postings that match your expertise and availability.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h4>Submit Proposals</h4>
+                            <p>Send professional proposals with your rates and timeline to clients.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <h4>Complete & Earn</h4>
+                            <p>Deliver quality work and build your reputation with positive client reviews.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <h2 class="section-title">Why Choose TASKER?</h2>
+            <p class="section-subtitle">The easiest way to find and hire skilled professionals</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3>Verified Professionals</h3>
+                    <p>All professionals on our platform are verified and reviewed by real clients.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Secure Payments</h3>
+                    <p>Your payment is held securely until you're satisfied with the work.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Ratings & Reviews</h3>
+                    <p>Make informed decisions based on real feedback from previous clients.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Easy Communication</h3>
+                    <p>Message professionals directly through our platform to discuss project details.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Buyer Protection</h3>
+                    <p>Our protection plan ensures your money is safe and disputes are resolved fairly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Quick & Easy</h3>
+                    <p>Post a task and get proposals within hours, not days.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="about-container">
+                <div class="about-content">
+                    <h2>About TASKER</h2>
+                    <p>TASKER is a modern service marketplace that connects people who need work done with skilled professionals who can do it. Whether you need a carpenter, plumber, designer, or any other professional service, TASKER makes it easy to find, hire, and manage professionals all in one place.</p>
+                    
+                    <h3>Our Mission</h3>
+                    <p>To make hiring skilled professionals as simple and trustworthy as possible, enabling people to focus on what matters most while connecting them with quality service providers.</p>
+                    
+                    <h3>Our Vision</h3>
+                    <p>To become the world's leading marketplace for skilled professional services, where trust, quality, and affordability are guaranteed.</p>
+                    
+                    <h3>Why We Started TASKER</h3>
+                    <p>We recognized a gap in the market: finding and hiring skilled professionals was unnecessarily complicated, time-consuming, and risky. We founded TASKER to change that. Now, thousands of users benefit from our platform every day.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq" id="faq">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How much does it cost to use TASKER?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>TASKER is free to use for posting tasks and receiving proposals. We take a small service fee (typically 5%) when you make a payment to a professional. There are no hidden fees or subscription requirements.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How do I know if professionals are qualified?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>All professionals on TASKER are verified through our platform. You can review their profiles, check their experience, see verified work history, and read reviews from previous clients before hiring.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What if I'm not satisfied with the work?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We have a dispute resolution process to handle this. If you're not satisfied, you can open a dispute, and our support team will help resolve the issue fairly. Your funds are protected until you're happy with the work.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How do I get paid as a professional?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Once a client releases payment (usually after accepting the completed work), the funds are transferred to your account. You can withdraw your earnings to your bank account at any time.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What payment methods do you accept?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept credit cards, debit cards, bank transfers, and digital wallets like PayPal. Professionals can withdraw earnings via bank transfer or other supported methods in their country.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How quickly can I get a professional?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>On average, you'll receive proposals within 1-3 hours of posting your task. Urgent tasks are often completed the same day. Response time depends on the service category and task complexity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Ready to Get Started?</h2>
+            <p>Join thousands of satisfied clients and professionals on TASKER today</p>
+            <div class="cta-buttons">
+                <button class="btn-primary-lg" onclick="handlePostService()">Post a Service Request</button>
+                <button class="btn-secondary-lg" onclick="handleSignup()">Join as a Professional</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>TASKER</h4>
+                <p>The easiest way to find and hire skilled professionals.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>For Users</h4>
+                <ul>
+                    <li><a href="#" onclick="handleBrowse(); return false;">Browse Services</a></li>
+                    <li><a href="#" onclick="handlePostService(); return false;">Post a Task</a></li>
+                    <li><a href="#" onclick="handleLogin(); return false;">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>For Professionals</h4>
+                <ul>
+                    <li><a href="#" onclick="handleSignup(); return false;">Sign Up</a></li>
+                    <li><a href="#" onclick="handleBecomeProf(); return false;">How to Earn</a></li>
+                    <li><a href="#" onclick="handleViewTask(); return false;">Browse Tasks</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact & Legal</h4>
+                <ul>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TASKER. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Service Details (optional) -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p>Find qualified professionals for <strong id="modalServiceName"></strong> services.</p>
+            <button class="btn-primary" onclick="handleRequestService()">Request This Service</button>
+            <button class="btn-secondary" onclick="handleOfferService()">Offer This Service</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
